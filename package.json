@@ -31,7 +31,13 @@
     "@expo/next-adapter": "2.1.5",
     "@types/next": "^9.0.0",
     "@types/react-native": "^0.64.2",
-    "babel-plugin-transform-class-properties": "^6.24.1"
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "prettier": "^2.2.1"
   },
   "license": "MIT"
 }
