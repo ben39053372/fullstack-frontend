@@ -17,7 +17,7 @@ export default function App() {
       <Text h1>hi Welcome to Expo + Next.js 👋</Text>
       <Divider />
       <Text h2>i18n</Text>
-      {t('test')}
+      <Text>{t('test')}</Text>
       <View
         style={{
           flexDirection: 'row',

@@ -14,7 +14,7 @@ export default function Main(props: MainProps) {
       </View>
       {props.children}
       <View>
-        <Text>Footer</Text>
+        <Text>Footer(native)</Text>
       </View>
     </View>
   );
