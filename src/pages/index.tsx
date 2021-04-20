@@ -7,13 +7,19 @@ import { useTranslation } from 'react-i18next';
 import { useAppSelector, useAppDispatch } from '../hooks/redux';
 import { increment, decrement } from '../features/counter/counterSlice';
 import { Divider, Button } from 'react-native-elements';
+import { Link, useRouting } from 'expo-next-react-navigation';
+import Head from 'next/head';
 
 export default function App() {
   const { t, i18n } = useTranslation();
   const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
+  const { navigate } = useRouting();
   return (
     <View style={styles.container}>
+      <Head>
+        <title>Home</title>
+      </Head>
       <Text h1>hi Welcome to Expo + Next.js 👋</Text>
       <Divider />
       <Text h2>i18n</Text>
@@ -48,6 +54,13 @@ export default function App() {
         <Button title="increment" onPress={() => dispatch(increment())} />
         <Button title="decrement" onPress={() => dispatch(decrement())} />
       </View>
+      <Divider />
+      <Text h2>React Navigation</Text>
+      <Button
+        title="Goto About(useRouting)"
+        onPress={() => navigate({ routeName: 'About' })}
+      />
+      <Button title={<Link routeName="About">{'Goto About(<Link />)'}</Link>} />
     </View>
   );
 }

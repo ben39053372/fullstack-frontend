@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { Text, Header } from 'react-native-elements';
 
 interface MainProps {
@@ -8,7 +8,7 @@ interface MainProps {
 
 export default function Main(props: MainProps) {
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <View>
         <Header
           leftComponent={{ icon: 'menu', color: '#fff' }}
@@ -16,7 +16,9 @@ export default function Main(props: MainProps) {
           rightComponent={{ icon: 'home', color: '#fff' }}
         />
       </View>
-      <View>{props.children} </View>
+      <ScrollView contentContainerStyle={{ flex: 1 }}>
+        {props.children}
+      </ScrollView>
       <Text>Footer</Text>
     </View>
   );

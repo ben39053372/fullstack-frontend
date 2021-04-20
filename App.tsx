@@ -5,20 +5,23 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import index from './src/pages/index';
-import about from './src/pages/about';
+import About from './src/pages/About';
 import Providers from './src/Providers';
+import Main from './src/layouts/Main';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <Providers>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={index} />
-          <Stack.Screen name="About" component={about} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <Main>
+        <NavigationContainer>
+          <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Home" component={index} />
+            <Stack.Screen name="About" component={About} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </Main>
     </Providers>
   );
 }
