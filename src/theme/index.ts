@@ -1,7 +1,7 @@
 import { DeepPartial } from '@reduxjs/toolkit';
 import type { DividerProps, FullTheme, TextProps } from 'react-native-elements';
 
-interface Breakpoints {
+export interface Breakpoints {
   xs: number;
   sm: number;
   md: number;
@@ -9,11 +9,11 @@ interface Breakpoints {
   xl: number;
 }
 
-interface Theme extends DeepPartial<FullTheme> {
-  Breakpoints: Breakpoints;
+export interface Theme extends DeepPartial<FullTheme> {
+  Breakpoints?: Partial<Breakpoints>;
 }
 
-const Breakpoints: Breakpoints = {
+export const Breakpoints: Partial<Breakpoints> = {
   xs: 0,
   sm: 600,
   md: 960,
@@ -21,14 +21,14 @@ const Breakpoints: Breakpoints = {
   xl: 1920,
 };
 
-const Divider: DeepPartial<Partial<DividerProps>> = {
+export const Divider: DeepPartial<Partial<DividerProps>> = {
   style: {
     width: '90%',
     marginVertical: 10,
   },
 };
 
-const Text: DeepPartial<Partial<TextProps>> = {
+export const Text: DeepPartial<Partial<TextProps>> = {
   h1Style: {
     fontSize: 32,
   },
