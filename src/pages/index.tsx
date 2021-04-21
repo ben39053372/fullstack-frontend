@@ -4,11 +4,13 @@ import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-elements';
 import '../i18n';
 import { useTranslation } from 'react-i18next';
-import { useAppSelector, useAppDispatch } from '../hooks/redux';
+import { useAppDispatch } from '../hooks/redux/useAppDispatch';
+import { useAppSelector } from '../hooks/redux/useAppSelector';
 import { increment, decrement } from '../features/counter/counterSlice';
 import { Divider, Button } from 'react-native-elements';
 import { Link, useRouting } from 'expo-next-react-navigation';
 import Head from 'next/head';
+import Container from '../components/Container';
 
 export default function App() {
   const { t, i18n } = useTranslation();
@@ -24,13 +26,7 @@ export default function App() {
       <Divider />
       <Text h2>i18n</Text>
       <Text>{t('test')}</Text>
-      <View
-        style={{
-          flexDirection: 'row',
-          width: '50%',
-          justifyContent: 'space-around',
-        }}
-      >
+      <View style={styles.section}>
         <Button
           title="change to en"
           onPress={() => i18n.changeLanguage('en')}
@@ -44,13 +40,7 @@ export default function App() {
       <Text h2>Redux</Text>
 
       <Text>Count: {count}</Text>
-      <View
-        style={{
-          flexDirection: 'row',
-          width: '50%',
-          justifyContent: 'space-around',
-        }}
-      >
+      <View style={styles.section}>
         <Button title="increment" onPress={() => dispatch(increment())} />
         <Button title="decrement" onPress={() => dispatch(decrement())} />
       </View>
@@ -70,5 +60,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  section: {
+    flexDirection: 'row',
+    flex: 1,
+    justifyContent: 'space-around',
   },
 });
