@@ -10,9 +10,9 @@ export const useBreakpoint = () => {
   useEffect(() => {
     const sortedBp = Object.entries(theme.Breakpoints)
       .sort((a, b) => b[1] - a[1])
-      .find((bp) => bp[1] < width)[0];
+      .find((bp) => bp[1] < width)?.[0];
 
-    setBp(sortedBp || theme.Breakpoints[Object.keys(theme.Breakpoints).length]);
+    setBp(sortedBp || 'xl');
   }, [width]);
 
   return bp;

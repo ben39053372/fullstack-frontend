@@ -10,10 +10,10 @@ export interface Breakpoints {
 }
 
 export interface Theme extends DeepPartial<FullTheme> {
-  Breakpoints?: Partial<Breakpoints>;
+  Breakpoints: Breakpoints;
 }
 
-export const Breakpoints: Partial<Breakpoints> = {
+export const Breakpoints: Breakpoints = {
   xs: 0,
   sm: 600,
   md: 960,
