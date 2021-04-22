@@ -20,6 +20,10 @@ module.exports = withPlugins(
     [withExpo, { projectRoot: __dirname }],
   ],
   {
+    i18n: {
+      locales: ['en', 'zh-HK', 'zh-TW'],
+      defaultLocale: 'zh-HK',
+    },
     reactStrictMode: true,
   },
 );
