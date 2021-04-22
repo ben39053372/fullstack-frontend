@@ -10,7 +10,6 @@ import { Link, useRouting } from 'expo-next-react-navigation';
 import Head from 'next/head';
 
 const App = () => {
-  console.log('test');
   const { t, i18n } = useTranslation();
   const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
