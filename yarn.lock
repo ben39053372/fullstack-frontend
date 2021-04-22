@@ -1117,6 +1117,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.5.5":
+  version "7.13.17"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.17.tgz#8966d1fc9593bf848602f0662d6b4d0069e3a7ec"
+  integrity sha512-NCdgJEelPTSh+FEFylhnP1ylq848l1z9t9N0j1Lfbcw0+KXGjsTvUmkxy+voLLXB5SOKMbLLx4jxYliGrYQseA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.0.0", "@babel/template@^7.12.13", "@babel/template@^7.8.6":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.12.13.tgz#530265be8a2589dbb37523844c5bcb55947fb327"
@@ -2539,21 +2546,6 @@
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
   integrity sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==
-
-"@types/react-native-vector-icons@^6.4.6":
-  version "6.4.6"
-  resolved "https://registry.yarnpkg.com/@types/react-native-vector-icons/-/react-native-vector-icons-6.4.6.tgz#848e3b14572def56212cafbf5cb1254b445bfb41"
-  integrity sha512-lAyxNfMd5L1xZvXWsGcJmNegDf61TAp40uL6ashNNWj9W3IrDJO59L9+9inh0Y2MsEZpLTdxzVU8Unb4/0FQng==
-  dependencies:
-    "@types/react" "*"
-    "@types/react-native" "*"
-
-"@types/react-native@*":
-  version "0.64.4"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.64.4.tgz#9f11bef7dd5520801884829c73b19d75aa42e73c"
-  integrity sha512-VqnlmadGkD5usREvnuyVpWDS1W8f6cCz6MP5fZdgONsaZ9/Ijfb9Iq9MZ5O3bnW1OyJixDX9HtSp3COsFSLD8Q==
-  dependencies:
-    "@types/react" "*"
 
 "@types/react-native@^0.64.2":
   version "0.64.2"
@@ -4226,7 +4218,7 @@ color-support@^1.1.3:
   resolved "https://registry.yarnpkg.com/color-support/-/color-support-1.1.3.tgz#93834379a1cc9a0c61f82f52f0d04322251bd5a2"
   integrity sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==
 
-color@^3.0.0, color@^3.1.2, color@^3.1.3:
+color@^3.0.0, color@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/color/-/color-3.1.3.tgz#ca67fb4e7b97d611dcde39eceed422067d91596e"
   integrity sha512-xgXAcTHa2HeFCGLE9Xs/R82hujGtu9Jd9x4NW3T34+OMs7VoPsjwzRczKHvTAHeJwWFwX5j15+MgAppE8ztObQ==
@@ -4849,11 +4841,6 @@ deepmerge@^3.2.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-3.3.0.tgz#d3c47fd6f3a93d517b14426b0628a17b0125f5f7"
   integrity sha512-GRQOafGHwMHpjPx9iCvTgpu9NojZ49q794EEL94JVEw6VaeA8XTUyBKvAkOOjBX9oJNiV6G3P+T+tihFjo2TqA==
-
-deepmerge@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
-  integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
 
 defaults@^1.0.3:
   version "1.0.3"
@@ -6628,6 +6615,13 @@ hyphenate-style-name@^1.0.2, hyphenate-style-name@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.4.tgz#691879af8e220aea5750e8827db4ef62a54e361d"
   integrity sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==
+
+i18next-browser-languagedetector@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-6.1.0.tgz#83d3a920d5f300424aa37bd4c0a09c267844de71"
+  integrity sha512-NXbr/qPqkg6VyUwPrzmVOAafqIk1zdjzhYVxZWoSi338XEGmuOeroEglLdR8nJUJcf5BfOSHva80tqCPwXFTFQ==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
 
 i18next@^20.2.1:
   version "20.2.1"
@@ -8715,11 +8709,6 @@ open@^6.2.0, open@^6.3.0:
   dependencies:
     is-wsl "^1.1.0"
 
-opencollective-postinstall@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.3.tgz#7a0fff978f6dbfa4d006238fbac98ed4198c3259"
-  integrity sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==
-
 optimize-css-assets-webpack-plugin@^5.0.1:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/optimize-css-assets-webpack-plugin/-/optimize-css-assets-webpack-plugin-5.0.4.tgz#85883c6528aaa02e30bbad9908c92926bb52dc90"
@@ -9872,20 +9861,6 @@ react-native-appearance@~0.3.3:
     invariant "^2.2.4"
     use-subscription "^1.0.0"
 
-react-native-elements@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-3.3.2.tgz#42cc05c90a5c85c8aee95ce363bce0c5a39fe633"
-  integrity sha512-bDWQt0WEuJEOrwzSYx0mVBV3aoRtJAsK0Kc2sioMsshSEhPOZK17Ccx+EvLBSpZ9uWxPyx42Z7hUH/8dQNu67g==
-  dependencies:
-    "@types/react-native-vector-icons" "^6.4.6"
-    color "^3.1.2"
-    deepmerge "^4.2.2"
-    hoist-non-react-statics "^3.3.2"
-    lodash.isequal "^4.5.0"
-    opencollective-postinstall "^2.0.3"
-    react-native-ratings "^7.3.0"
-    react-native-size-matters "^0.3.1"
-
 react-native-gesture-handler@~1.10.2:
   version "1.10.3"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz#942bbf2963bbf49fa79593600ee9d7b5dab3cfc0"
@@ -9901,14 +9876,6 @@ react-native-iphone-x-helper@^1.3.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz#20c603e9a0e765fd6f97396638bdeb0e5a60b010"
   integrity sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg==
-
-react-native-ratings@^7.3.0:
-  version "7.6.1"
-  resolved "https://registry.yarnpkg.com/react-native-ratings/-/react-native-ratings-7.6.1.tgz#b3d8a99a0c12fd6874f7e3c0e492089543d837c8"
-  integrity sha512-V3y19iIifwemMr87KfovFIIzy/Rotqcds9k+ECaayQvrlucm/mXFC69R8xl/NivEdnxX7K87iurigByhpE37EQ==
-  dependencies:
-    lodash "^4.17.15"
-    prop-types "^15.7.2"
 
 react-native-reanimated@~2.1.0:
   version "2.1.0"
@@ -9929,11 +9896,6 @@ react-native-screens@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-3.0.0.tgz#ee4c2d69abf7411603868b57214feec5e8f637fa"
   integrity sha512-35II5oxTaVp3OP8y0eLPOPpQkxG4fRKQ+dL1YSE1we5kCZFOU0l/Rn0T79HbyUu1LPwUZr6lZupPs0ULnRyMuQ==
-
-react-native-size-matters@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/react-native-size-matters/-/react-native-size-matters-0.3.1.tgz#24d0cfc335a2c730f6d58bd7b43ea5a41be4b49f"
-  integrity sha512-mKOfBLIBFBcs9br1rlZDvxD5+mAl8Gfr5CounwJtxI6Z82rGrMO+Kgl9EIg3RMVf3G855a85YVqHJL2f5EDRlw==
 
 react-native-web@~0.13.12:
   version "0.13.18"

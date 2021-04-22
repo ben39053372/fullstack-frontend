@@ -3,21 +3,13 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { AppearanceProvider } from 'react-native-appearance';
 import { store } from '../store';
-import { theme } from '../theme';
-import { ThemeProvider } from 'react-native-elements';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  const colorScheme = useColorScheme();
   return (
     <Provider store={store}>
-      <AppearanceProvider>
-        <ThemeProvider theme={theme} useDark={colorScheme === 'dark'}>
-          <SafeAreaProvider>{children}</SafeAreaProvider>
-        </ThemeProvider>
-      </AppearanceProvider>
+      <AppearanceProvider>{children}</AppearanceProvider>
     </Provider>
   );
 }
