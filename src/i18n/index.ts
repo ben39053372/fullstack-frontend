@@ -20,7 +20,7 @@ i18n
     ns: [],
     resources,
     lng: 'zh-HK',
-    debug: true,
+    debug: false,
     keySeparator: false, // we do not use keys in form messages.welcome
     fallbackLng: 'zh-HK',
     cleanCode: true,
