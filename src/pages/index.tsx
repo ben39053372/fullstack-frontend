@@ -1,15 +1,32 @@
 // @generated: @expo/next-adapter@2.1.5
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import '../i18n';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../hooks/redux/useAppDispatch';
 import { useAppSelector } from '../hooks/redux/useAppSelector';
 import { increment, decrement } from '../features/counter/counterSlice';
-import { Link, useRouting } from 'expo-next-react-navigation';
+import { useRouting } from 'expo-next-react-navigation';
 import Head from 'next/head';
+import { helloApi } from '../apis/user';
+import { GetServerSideProps } from 'next';
 
-const App = () => {
+interface props {
+  data: any;
+}
+
+export const getServerSideProps: GetServerSideProps<props> = async (
+  context,
+) => {
+  const { data } = await helloApi();
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+const App = ({ data }: props) => {
   const { t, i18n } = useTranslation();
   const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
@@ -21,7 +38,7 @@ const App = () => {
         <title>Home</title>
       </Head>
       <Text>hi Welcome to Expo + Next.js 👋</Text>
-      <Text>i18n</Text>
+      <Text>i18n{process.env.NEXT_PUBLIC_BACKEND_URL}</Text>
       <Text>{t('test')}</Text>
       <View style={styles.section}>
         <Button
@@ -46,6 +63,10 @@ const App = () => {
           title="Goto About(useRouting)"
           onPress={() => navigate({ routeName: 'About' })}
         />
+      </View>
+
+      <View style={styles.section}>
+        <Button title="Call Hello World" onPress={() => helloApi()} />
       </View>
     </View>
   );
