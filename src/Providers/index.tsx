@@ -4,7 +4,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { AppearanceProvider } from 'react-native-appearance';
-import { store } from '../store';
+import { store } from '../store/store';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
