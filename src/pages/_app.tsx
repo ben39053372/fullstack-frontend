@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app';
-import GlobalRouteProgressBar from '../components/GlobalRouteProgressBar';
+import GlobalRouteProgressBar from '../components/Atoms/GlobalROuteProgressBar/GlobalRouteProgressBar';
 import Main from '../layouts/Main';
 import React from 'react';
-import Providers from '../Providers';
+import Providers from '../providers';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

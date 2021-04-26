@@ -18,10 +18,10 @@ interface props {
 export const getServerSideProps: GetServerSideProps<props> = async (
   context,
 ) => {
-  const { data } = await helloApi();
+  // const { data } = await helloApi();
   return {
     props: {
-      data,
+      data: {}
     },
   };
 };
