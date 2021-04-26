@@ -1,6 +1,6 @@
 // @generated: @expo/next-adapter@2.1.5
 import React, { useEffect } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import '../i18n';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../hooks/redux/useAppDispatch';
@@ -9,22 +9,11 @@ import { increment, decrement } from '../features/counter/counterSlice';
 import { useRouting } from 'expo-next-react-navigation';
 import Head from 'next/head';
 import { helloApi } from '../apis/user';
-import { GetServerSideProps } from 'next';
+import { Button } from '../components/Atoms/Button'
 
 interface props {
   data: any;
 }
-
-export const getServerSideProps: GetServerSideProps<props> = async (
-  context,
-) => {
-  // const { data } = await helloApi();
-  return {
-    props: {
-      data: {}
-    },
-  };
-};
 
 const App = ({ data }: props) => {
   const { t, i18n } = useTranslation();
@@ -42,11 +31,11 @@ const App = ({ data }: props) => {
       <Text>{t('test')}</Text>
       <View style={styles.section}>
         <Button
-          title="change to en"
+          text="change to en"
           onPress={() => i18n.changeLanguage('en')}
         />
         <Button
-          title="change to zh-HK"
+          text="change to zh-HK"
           onPress={() => i18n.changeLanguage('zh-hk')}
         />
       </View>
@@ -54,19 +43,19 @@ const App = ({ data }: props) => {
 
       <Text>Count: {count}</Text>
       <View style={styles.section}>
-        <Button title="increment" onPress={() => dispatch(increment())} />
-        <Button title="decrement" onPress={() => dispatch(decrement())} />
+        <Button text="increment" onPress={() => dispatch(increment())} />
+        <Button text="decrement" onPress={() => dispatch(decrement())} />
       </View>
       <Text>React Navigation</Text>
       <View style={styles.section}>
         <Button
-          title="Goto About(useRouting)"
+          text="Goto About(useRouting)"
           onPress={() => navigate({ routeName: 'About' })}
         />
       </View>
 
       <View style={styles.section}>
-        <Button title="Call Hello World" onPress={() => helloApi()} />
+        <Button text="Call Hello World" onPress={() => helloApi()} />
       </View>
     </View>
   );

@@ -7,7 +7,8 @@ import {
   selectDrawerOpen,
 } from '../../../features/app/appSlice';
 import { useAppSelector } from '../../../hooks/redux/useAppSelector';
-import { Animated } from 'react-native';
+import { Animated, Platform } from 'react-native';
+import { useWindowDimensions } from 'react-native';
 
 interface DrawerLayoutProps {
   drawerView: (progressAnimatedValue: Animated.Value) => React.ReactNode;
@@ -18,6 +19,7 @@ export function DrawerLayout(props: DrawerLayoutProps) {
   const dispatch = useAppDispatch();
   const drawer = useRef<_DrawerLayout | null>(null);
   const isDrawerOpen = useAppSelector(selectDrawerOpen);
+  const { width } = useWindowDimensions()
 
   useEffect(() => {
     isDrawerOpen ? drawer.current?.openDrawer() : drawer.current?.closeDrawer();
@@ -28,7 +30,7 @@ export function DrawerLayout(props: DrawerLayoutProps) {
       ref={drawer}
       onDrawerClose={() => dispatch(closeDrawer())}
       onDrawerOpen={() => dispatch(openDrawer())}
-      drawerWidth={250}
+      drawerWidth={Platform.OS === "web" ? 280 : width * 0.85}
       renderNavigationView={props.drawerView}
       drawerBackgroundColor="#ddd"
     >

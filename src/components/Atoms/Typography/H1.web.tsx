@@ -1,6 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
 import { TypographyProps } from '.';
 
-export const H1 = (props: TypographyProps) => {
-  return <h1>{props.children}</h1>;
-};
+export const H1 = styled.h1<TypographyProps>`
+  font-size: ${({ theme }) => theme.typography.h1.fontSize};
+  margin: 0
+`

@@ -1,15 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { Fontisto } from '@expo/vector-icons';
 import { Container } from './NavBar.style';
+import { H2 } from '../../Atoms/Typography';
 
 export function NavBar() {
   return (
-    <View>
-      <Text>Native NavBar</Text>
-      <Container>
-        <Fontisto name="nav-icon" />
-      </Container>
-    </View>
+    <Container>
+      <Fontisto name="nav-icon" style={styles.icon} />
+      <H2>NavBar</H2>
+    </Container>
   );
 }
+
+const styles = StyleSheet.create({
+  icon: { padding: 5, marginVertical: "auto" }
+})
