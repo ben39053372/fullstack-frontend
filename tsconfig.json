@@ -69,7 +69,7 @@
 
     /* Advanced Options */
     "skipLibCheck": true /* Skip type checking of declaration files. */,
-    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+    "forceConsistentCasingInFileNames": false /* Disallow inconsistently-cased references to the same file. */
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/index.js"],
   "exclude": ["node_modules"]
