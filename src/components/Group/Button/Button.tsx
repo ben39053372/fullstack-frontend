@@ -1,6 +1,6 @@
 import React from 'react';
 import { GestureResponderEvent, TouchableOpacity } from 'react-native';
-import * as T from '../Text';
+import * as T from '../../Atoms/Text';
 
 export interface ButtonProps {
   text: string;

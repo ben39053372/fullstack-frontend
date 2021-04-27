@@ -1,6 +1,6 @@
 // @generated: @expo/next-adapter@2.1.5
-import React, { useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 import '../i18n';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../hooks/redux/useAppDispatch';
@@ -9,7 +9,7 @@ import { increment, decrement } from '../features/counter/counterSlice';
 import { useRouting } from 'expo-next-react-navigation';
 import Head from 'next/head';
 import { helloApi } from '../apis/user';
-import { Button } from '../components/Atoms/Button';
+import { Button } from '../components/Group/Button';
 import { H1, H2, H3 } from '../components/Atoms/Text/index';
 
 interface props {
