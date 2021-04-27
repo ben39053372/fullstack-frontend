@@ -17,7 +17,9 @@ module.exports = withPlugins(
         transpileModules: ['expo-next-react-navigation'],
       },
     ],
-    withFonts,
+    withFonts({
+      projectRoot: __dirname,
+    }),
     withImages,
     [withExpo, { projectRoot: __dirname }],
   ],
