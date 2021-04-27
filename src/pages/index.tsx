@@ -9,7 +9,8 @@ import { increment, decrement } from '../features/counter/counterSlice';
 import { useRouting } from 'expo-next-react-navigation';
 import Head from 'next/head';
 import { helloApi } from '../apis/user';
-import { Button } from '../components/Atoms/Button'
+import { Button } from '../components/Atoms/Button';
+import { H1, H2, H3 } from '../components/Atoms/Text/index';
 
 interface props {
   data: any;
@@ -26,36 +27,51 @@ const App = ({ data }: props) => {
       <Head>
         <title>Home</title>
       </Head>
-      <Text>hi Welcome to Expo + Next.js 👋</Text>
-      <Text>i18n{process.env.NEXT_PUBLIC_BACKEND_URL}</Text>
-      <Text>{t('test')}</Text>
+      <H1>hi Welcome to Expo + Next.js 👋</H1>
+      <H2>i18n{process.env.NEXT_PUBLIC_BACKEND_URL}</H2>
+      <H3>{t('test')}</H3>
       <View style={styles.section}>
         <Button
           text="change to en"
+          textVariant="H3"
           onPress={() => i18n.changeLanguage('en')}
         />
         <Button
           text="change to zh-HK"
+          textVariant="H3"
           onPress={() => i18n.changeLanguage('zh-hk')}
         />
       </View>
-      <Text>Redux</Text>
+      <H2>Redux</H2>
 
-      <Text>Count: {count}</Text>
+      <H3>Count: {count}</H3>
       <View style={styles.section}>
-        <Button text="increment" onPress={() => dispatch(increment())} />
-        <Button text="decrement" onPress={() => dispatch(decrement())} />
+        <Button
+          text="increment"
+          textVariant="H3"
+          onPress={() => dispatch(increment())}
+        />
+        <Button
+          text="decrement"
+          textVariant="H3"
+          onPress={() => dispatch(decrement())}
+        />
       </View>
-      <Text>React Navigation</Text>
+      <H2>React Navigation</H2>
       <View style={styles.section}>
         <Button
           text="Goto About(useRouting)"
+          textVariant="H3"
           onPress={() => navigate({ routeName: 'About' })}
         />
       </View>
 
       <View style={styles.section}>
-        <Button text="Call Hello World" onPress={() => helloApi()} />
+        <Button
+          text="Call Hello World"
+          textVariant="H3"
+          onPress={() => helloApi()}
+        />
       </View>
     </View>
   );

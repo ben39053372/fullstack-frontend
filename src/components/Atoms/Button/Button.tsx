@@ -1,16 +1,19 @@
-import React from 'react'
-import { GestureResponderEvent, Text, TouchableOpacity } from 'react-native'
-import styled from 'styled-components/native'
+import React from 'react';
+import { GestureResponderEvent, TouchableOpacity } from 'react-native';
+import * as T from '../Text';
 
 export interface ButtonProps {
-  text: string
-  onPress(event: GestureResponderEvent): void
+  text: string;
+  textVariant: keyof typeof T;
+  onPress(event: GestureResponderEvent): void;
 }
 
 export function Button(props: ButtonProps) {
+  const Text = T[props.textVariant];
+
   return (
     <TouchableOpacity onPress={(e) => props.onPress}>
       <Text>{props.text}</Text>
     </TouchableOpacity>
-  )
+  );
 }
