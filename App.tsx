@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import index from './src/pages/index';
 import About from './src/pages/About';
-import Providers from './src/Providers';
+import Providers from './src/providers';
 import Main from './src/layouts/Main';
 
 const Stack = createStackNavigator();

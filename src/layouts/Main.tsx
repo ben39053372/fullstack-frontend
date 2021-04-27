@@ -1,5 +1,8 @@
 import React from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, View, Text, SafeAreaView, StatusBar } from 'react-native';
+import { DrawerLayout } from '../components/Group/DrawerLayout';
+import { DrawerView } from '../components/Group/DrawerView';
+import { NavBar } from '../components/Group/NavBar';
 
 interface MainProps {
   children: React.ReactNode;
@@ -7,10 +10,16 @@ interface MainProps {
 
 export default function Main(props: MainProps) {
   return (
-    <View style={{ flex: 1 }}>
-      <ScrollView contentContainerStyle={{ flex: 1 }}>
-        {props.children}
-      </ScrollView>
-    </View>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#09c" }}>
+      <DrawerLayout drawerView={DrawerView}>
+        <NavBar />
+        <ScrollView contentContainerStyle={{ flex: 1, backgroundColor: "#fff" }}>
+          {props.children}
+        </ScrollView>
+        <View>
+          <Text>footer</Text>
+        </View>
+      </DrawerLayout>
+    </SafeAreaView>
   );
 }
