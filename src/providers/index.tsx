@@ -13,9 +13,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <Provider store={store}>
       <MyThemeProvider value={MyTheme}>
-        <ThemeProvider theme={theme}>
-          <AppearanceProvider>{children}</AppearanceProvider>
-        </ThemeProvider>
+        {/* <ThemeProvider theme={theme}> */}
+        <AppearanceProvider>{children}</AppearanceProvider>
+        {/* </ThemeProvider> */}
       </MyThemeProvider>
     </Provider>
   );

@@ -1,89 +1,26 @@
-import React, { ReactNode } from 'react';
-import { StyleSheet, Text, PixelRatio } from 'react-native';
+import React from 'react';
+import { Text as _Text, PixelRatio } from 'react-native';
+import { TypographyProps } from '.';
 import { useMyTheme } from '../../../providers/MyThemeProviders';
 
-export interface TextProps {
-  children: ReactNode;
-}
-
-export function H1(props: TextProps) {
+export function Text(props: TypographyProps) {
   const theme = useMyTheme();
+  const { css, ..._props } = props;
   return (
-    <Text style={[fontStyles.h2, { fontSize: theme.typography.h1.fontSize }]}>
+    <_Text
+      {..._props}
+      style={[
+        {
+          fontSize:
+            theme.typography[props.variant || 'h6'].fontSize *
+            // PixelRatio.get() *
+            8,
+          margin: theme.spacing.xl,
+        },
+        props.style,
+      ]}
+    >
       {props.children}
-    </Text>
+    </_Text>
   );
 }
-
-export function H2(props: TextProps) {
-  const theme = useMyTheme();
-  return (
-    <Text style={[fontStyles.h2, { fontSize: theme.typography.h1.fontSize }]}>
-      {props.children}
-    </Text>
-  );
-}
-
-export function H3(props: TextProps) {
-  const theme = useMyTheme();
-  return (
-    <Text style={[fontStyles.h3, { fontSize: theme.typography.h1.fontSize }]}>
-      {props.children}
-    </Text>
-  );
-}
-
-export function H4(props: TextProps) {
-  const theme = useMyTheme();
-  return (
-    <Text style={[fontStyles.h4, { fontSize: theme.typography.h1.fontSize }]}>
-      {props.children}
-    </Text>
-  );
-}
-
-export function H5(props: TextProps) {
-  const theme = useMyTheme();
-  return (
-    <Text style={[fontStyles.h5, { fontSize: theme.typography.h1.fontSize }]}>
-      {props.children}
-    </Text>
-  );
-}
-
-export function H6(props: TextProps) {
-  const theme = useMyTheme();
-  return (
-    <Text style={[fontStyles.h6, { fontSize: theme.typography.h1.fontSize }]}>
-      {props.children}
-    </Text>
-  );
-}
-
-const fontStyles = StyleSheet.create({
-  h1: {
-    fontSize: PixelRatio.get() * 2,
-    margin: 0,
-  },
-  h2: {
-    fontSize: PixelRatio.get() * 1.4,
-    margin: 0,
-  },
-  h3: {
-    fontSize: PixelRatio.get() * 1.2,
-    margin: 0,
-  },
-  h4: {
-    fontSize: PixelRatio.get() * 1,
-    margin: 0,
-  },
-  h5: {
-    fontSize: PixelRatio.get() * 0.9,
-
-    margin: 0,
-  },
-  h6: {
-    fontSize: PixelRatio.get() * 0.9,
-    margin: 0,
-  },
-});

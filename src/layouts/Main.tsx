@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View, Text, SafeAreaView, StatusBar } from 'react-native';
+import { ScrollView, View, Text, SafeAreaView } from 'react-native';
 import { DrawerLayout } from '../components/Group/DrawerLayout';
 import { DrawerView } from '../components/Group/DrawerView';
 import { NavBar } from '../components/Group/NavBar';
@@ -10,10 +10,10 @@ interface MainProps {
 
 export default function Main(props: MainProps) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#09c" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#ddd' }}>
       <DrawerLayout drawerView={DrawerView}>
-        <NavBar />
-        <ScrollView contentContainerStyle={{ flex: 1, backgroundColor: "#fff" }}>
+        <NavBar title="react-native-expo-next" />
+        <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flex: 1 }}>
           {props.children}
         </ScrollView>
         <View>

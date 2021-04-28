@@ -1,8 +1,23 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Button } from './Button';
+import { Button } from '.';
+import { MyThemeProvider, theme } from '../../../providers/MyThemeProviders';
 
-storiesOf('Button', module)
-  .add('default',
-    () => <Button text="Button" onPress={() => console.log("I am Button")} />
-  )
+export const Default = () => (
+  <Button
+    text="change to en"
+    textVariant="h3"
+    onPress={() => console.log('I am Button')}
+  />
+);
+
+export default {
+  component: Button,
+  title: 'Button',
+  decorators: [
+    (Story: any) => (
+      <MyThemeProvider value={theme}>
+        <Story />
+      </MyThemeProvider>
+    ),
+  ],
+};

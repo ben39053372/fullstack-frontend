@@ -1,16 +1,24 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Container } from './NavBar.style';
-import { H2 } from '../../Atoms/Typography';
+import { NavBarProps } from '.';
+import { View } from 'react-native';
+import { Text } from '../../Atoms/Text';
+import {
+  useColorAppearance,
+  useMyTheme,
+} from '../../../providers/MyThemeProviders';
 
-export function NavBar() {
+export function NavBar(props: NavBarProps) {
+  const theme = useMyTheme();
+  const appearance = useColorAppearance();
   return (
-    <Container>
-      <H2>NavBar</H2>
-    </Container>
+    <View
+      {...props}
+      style={[
+        { backgroundColor: theme.color[props.color || 'primary'][appearance] },
+        props.style,
+      ]}
+    >
+      <Text variant="h2">{props.title}</Text>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  icon: { padding: 5, marginVertical: "auto" }
-})

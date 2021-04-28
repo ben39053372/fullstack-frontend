@@ -10,13 +10,9 @@ import { useRouting } from 'expo-next-react-navigation';
 import Head from 'next/head';
 import { helloApi } from '../apis/user';
 import { Button } from '../components/Group/Button';
-import { H1, H2, H3 } from '../components/Atoms/Text/index';
+import { Text } from '../components/Atoms/Text/index';
 
-interface props {
-  data: any;
-}
-
-const App = ({ data }: props) => {
+const App = () => {
   const { t, i18n } = useTranslation();
   const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
@@ -27,41 +23,42 @@ const App = ({ data }: props) => {
       <Head>
         <title>Home</title>
       </Head>
-      <H1>hi Welcome to Expo + Next.js 👋</H1>
-      <H2>i18n{process.env.NEXT_PUBLIC_BACKEND_URL}</H2>
-      <H3>{t('test')}</H3>
+      <Text variant="h1">hi Welcome to Expo + Next.js 👋</Text>
+      <Text variant="h2">i18n{process.env.NEXT_PUBLIC_BACKEND_URL}</Text>
+      <Text variant="h3">{t('test')}</Text>
       <View style={styles.section}>
         <Button
           text="change to en"
-          textVariant="H3"
+          textVariant="h4"
           onPress={() => i18n.changeLanguage('en')}
         />
         <Button
           text="change to zh-HK"
-          textVariant="H3"
+          textVariant="h4"
           onPress={() => i18n.changeLanguage('zh-hk')}
         />
       </View>
-      <H2>Redux</H2>
 
-      <H3>Count: {count}</H3>
+      <Text variant="h2">Redux</Text>
+
+      <Text variant="h3">Count: {count}</Text>
       <View style={styles.section}>
         <Button
           text="increment"
-          textVariant="H3"
+          textVariant="h4"
           onPress={() => dispatch(increment())}
         />
         <Button
           text="decrement"
-          textVariant="H3"
+          textVariant="h4"
           onPress={() => dispatch(decrement())}
         />
       </View>
-      <H2>React Navigation</H2>
+      <Text variant="h2">React Navigation</Text>
       <View style={styles.section}>
         <Button
           text="Goto About(useRouting)"
-          textVariant="H3"
+          textVariant="h4"
           onPress={() => navigate({ routeName: 'About' })}
         />
       </View>
@@ -69,7 +66,7 @@ const App = ({ data }: props) => {
       <View style={styles.section}>
         <Button
           text="Call Hello World"
-          textVariant="H3"
+          textVariant="h4"
           onPress={() => helloApi()}
         />
       </View>
@@ -87,6 +84,7 @@ const styles = StyleSheet.create({
   section: {
     flexDirection: 'row',
     flex: 1,
+    alignItems: 'center',
     justifyContent: 'space-evenly',
   },
 });

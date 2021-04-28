@@ -1,19 +1,31 @@
 import React from 'react';
-import { GestureResponderEvent, TouchableOpacity } from 'react-native';
-import * as T from '../../Atoms/Text';
+import {
+  GestureResponderEvent,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from 'react-native';
+import { useMyTheme } from '../../../providers/MyThemeProviders';
+import { Text } from '../../Atoms/Text';
 
-export interface ButtonProps {
+export interface ButtonProps extends TouchableOpacityProps {
   text: string;
-  textVariant: keyof typeof T;
+  textVariant: keyof TextVariant;
   onPress(event: GestureResponderEvent): void;
 }
 
 export function Button(props: ButtonProps) {
-  const Text = T[props.textVariant];
-
+  const theme = useMyTheme();
   return (
-    <TouchableOpacity onPress={(e) => props.onPress}>
-      <Text>{props.text}</Text>
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={[
+        {
+          backgroundColor: theme.color.secondary.dark,
+        },
+        props.style,
+      ]}
+    >
+      <Text variant={props.textVariant || 'h3'}>{props.text}</Text>
     </TouchableOpacity>
   );
 }
