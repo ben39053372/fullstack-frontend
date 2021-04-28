@@ -1,9 +1,9 @@
 import React from 'react';
 import { ScrollView, View, Text, SafeAreaView } from 'react-native';
-import { DrawerLayout } from '../components/Group/DrawerLayout';
-import { DrawerView } from '../components/Group/DrawerView';
-import { NavBar } from '../components/Group/NavBar';
-import { useColorAppearance, useMyTheme } from '../providers/MyThemeProviders';
+import { DrawerLayout } from '../Groups/DrawerLayout';
+import { DrawerView } from '../Groups/DrawerView';
+import { NavBar } from '../Groups/NavBar';
+import { useColorAppearance, useMyTheme } from '../../providers/MyThemeProviders';
 
 interface MainProps {
   children: React.ReactNode;

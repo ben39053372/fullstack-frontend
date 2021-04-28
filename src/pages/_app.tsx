@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import GlobalRouteProgressBar from '../components/Atoms/GlobalROuteProgressBar/GlobalRouteProgressBar';
-import Main from '../layouts/Main';
+import Main from '../components/Layouts/Main';
 import React from 'react';
 import Providers from '../providers';
 

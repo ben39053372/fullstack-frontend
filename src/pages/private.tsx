@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { Text } from '../components/Atoms/Text';
 import { signIn, useSession } from 'next-auth/client';
-import { Button } from '../components/Group/Button';
+import { Button } from '../components/Groups/Button';
 
 export default function PrivatePage() {
   const [session, loading] = useSession();

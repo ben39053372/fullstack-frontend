@@ -8,7 +8,7 @@ import { useAppSelector } from '../hooks/redux/useAppSelector';
 import { increment, decrement } from '../features/counter/counterSlice';
 import { useRouting } from 'expo-next-react-navigation';
 import Head from 'next/head';
-import { Button } from '../components/Group/Button';
+import { Button } from '../components/Groups/Button';
 import { Text } from '../components/Atoms/Text/index';
 
 const App = () => {
@@ -68,7 +68,7 @@ const App = () => {
       </Text>
 
       <View style={styles.section}>
-        <Button text="Call Hello World" textVariant="h4" onPress={() => {}} />
+        <Button text="Call Hello World" textVariant="h4" onPress={() => { }} />
         <Button
           text="Goto About(useRouting)"
           textVariant="h4"
