@@ -1,18 +1,22 @@
 import React from 'react';
 import { TypographyProps } from '.';
-import { useMyTheme } from '../../../providers/MyThemeProviders';
+import {
+  useColorAppearance,
+  useMyTheme,
+} from '../../../providers/MyThemeProviders';
 
 export function Text(props: TypographyProps) {
   const theme = useMyTheme();
+  const colorTheme = useColorAppearance();
 
   const style: React.CSSProperties = {
-    fontSize: `${theme.typography[props.variant || 'h6'].fontSize}rem`,
+    fontSize: `${theme.typography[props.textVariant || 'h6'].fontSize}rem`,
     margin: theme.spacing.md,
-    color: theme.color.text.main,
+    color: theme.color.text[colorTheme],
     ...props.css,
   };
 
-  switch (props.variant || 'h6') {
+  switch (props.textVariant || 'h6') {
     case 'h1':
       return <h1 style={style}>{props.children}</h1>;
     case 'h2':

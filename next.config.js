@@ -28,7 +28,7 @@ module.exports = withPlugins(
       locales: ['en', 'zh-HK', 'zh-TW'],
       defaultLocale: 'zh-HK',
     },
-    reactStrictMode: true,
+    reactStrictMode: false,
     // load env
     webpack(config) {
       config.plugins.push(new webpack.EnvironmentPlugin(env));

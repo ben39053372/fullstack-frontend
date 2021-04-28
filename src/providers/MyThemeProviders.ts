@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-// import { useColorScheme } from 'react-native-appearance';
+import { Appearance } from 'react-native';
 
 export const theme: DefaultTheme = {
   color: {
@@ -86,7 +86,6 @@ export const MyThemeProvider = MyThemeContext.Provider;
 export const useMyTheme = () => useContext(MyThemeContext);
 
 export const useColorAppearance = () => {
-  // const color = useColorScheme();
-  const color = 'dark';
+  const color = Appearance.getColorScheme();
   return color === 'dark' ? 'dark' : color === 'light' ? 'light' : 'main';
 };

@@ -5,6 +5,7 @@ export * from './Text';
 
 export interface TypographyProps extends TextProps {
   children: ReactNode;
-  variant?: keyof TextVariant;
+  textVariant?: keyof TextVariant;
+  colorVariant?: keyof ColorVariant;
   css?: React.CSSProperties;
 }

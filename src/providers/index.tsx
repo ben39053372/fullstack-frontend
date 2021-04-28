@@ -4,9 +4,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { AppearanceProvider } from 'react-native-appearance';
-import { ThemeProvider } from 'styled-components';
 import { store } from '../store/store';
-import { theme } from '../theme';
 import { MyThemeProvider, theme as MyTheme } from './MyThemeProviders';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
@@ -14,7 +12,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     <Provider store={store}>
       <MyThemeProvider value={MyTheme}>
         {/* <ThemeProvider theme={theme}> */}
-        <AppearanceProvider>{children}</AppearanceProvider>
+        {children}
         {/* </ThemeProvider> */}
       </MyThemeProvider>
     </Provider>
