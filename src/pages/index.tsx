@@ -1,7 +1,7 @@
 // @generated: @expo/next-adapter@2.1.5
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 import '../i18n';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../hooks/redux/useAppDispatch';
 import { useAppSelector } from '../hooks/redux/useAppSelector';
@@ -10,6 +10,7 @@ import { useRouting } from 'expo-next-react-navigation';
 import Head from 'next/head';
 import { Button } from '../components/Groups/Button';
 import { Text } from '../components/Atoms/Text/index';
+import { toAbout, toLogin, toProfile } from '../const/routes';
 
 const App = () => {
   const { t, i18n } = useTranslation();
@@ -18,7 +19,7 @@ const App = () => {
   const { navigate } = useRouting();
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Head>
         <title>Home</title>
       </Head>
@@ -68,14 +69,24 @@ const App = () => {
       </Text>
 
       <View style={styles.section}>
-        <Button text="Call Hello World" textVariant="h4" onPress={() => { }} />
+        <Button text="Call Hello World" textVariant="h4" onPress={() => {}} />
         <Button
           text="Goto About(useRouting)"
           textVariant="h4"
-          onPress={() => navigate({ routeName: 'about' })}
+          onPress={() => navigate(toAbout)}
+        />
+        <Button
+          text="Goto Private(useRouting)"
+          textVariant="h4"
+          onPress={() => navigate(toProfile)}
+        />
+        <Button
+          text="Goto Login(useRouting)"
+          textVariant="h4"
+          onPress={() => navigate(toLogin)}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

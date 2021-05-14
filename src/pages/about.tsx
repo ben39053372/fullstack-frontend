@@ -2,13 +2,17 @@ import Head from 'next/head';
 import React from 'react';
 import { Text, View } from 'react-native';
 
-export default function About() {
+function About() {
   return (
     <View>
       <Head>
-        <title>Home</title>
+        <title>
+          <Text>Home</Text>
+        </title>
       </Head>
       <Text>About</Text>
     </View>
   );
 }
+
+export default About;

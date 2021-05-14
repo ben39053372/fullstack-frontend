@@ -19,7 +19,7 @@ export function DrawerLayout(props: DrawerLayoutProps) {
   const dispatch = useAppDispatch();
   const drawer = useRef<_DrawerLayout | null>(null);
   const isDrawerOpen = useAppSelector(selectDrawerOpen);
-  const { width } = useWindowDimensions()
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     isDrawerOpen ? drawer.current?.openDrawer() : drawer.current?.closeDrawer();
@@ -30,7 +30,7 @@ export function DrawerLayout(props: DrawerLayoutProps) {
       ref={drawer}
       onDrawerClose={() => dispatch(closeDrawer())}
       onDrawerOpen={() => dispatch(openDrawer())}
-      drawerWidth={Platform.OS === "web" ? 280 : width * 0.85}
+      drawerWidth={Platform.OS === 'web' ? 280 : width * 0.85}
       renderNavigationView={props.drawerView}
       drawerBackgroundColor="#ddd"
     >

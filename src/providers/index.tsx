@@ -6,15 +6,18 @@ import { Provider } from 'react-redux';
 import { AppearanceProvider } from 'react-native-appearance';
 import { store } from '../store/store';
 import { MyThemeProvider, theme as MyTheme } from './MyThemeProviders';
+import { AuthProvider } from '../utils/Auth/AuthGuard';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <Provider store={store}>
-      <MyThemeProvider value={MyTheme}>
-        {/* <ThemeProvider theme={theme}> */}
-        {children}
-        {/* </ThemeProvider> */}
-      </MyThemeProvider>
+      <AuthProvider>
+        <MyThemeProvider value={MyTheme}>
+          {/* <ThemeProvider theme={theme}> */}
+          {children}
+          {/* </ThemeProvider> */}
+        </MyThemeProvider>
+      </AuthProvider>
     </Provider>
   );
 }
