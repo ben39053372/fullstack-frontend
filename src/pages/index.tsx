@@ -1,6 +1,6 @@
 // @generated: @expo/next-adapter@2.1.5
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import '../i18n';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../hooks/redux/useAppDispatch';
@@ -18,7 +18,7 @@ const App = () => {
   const { navigate } = useRouting();
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Head>
         <title>Home</title>
       </Head>
@@ -75,14 +75,12 @@ const App = () => {
           onPress={() => navigate({ routeName: 'about' })}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    // width: '100%',
   },
   section: {
     flexDirection: 'row',

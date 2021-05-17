@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import {
   GestureResponderEvent,
   TouchableOpacity,
@@ -25,7 +26,15 @@ export function Button(props: ButtonProps) {
       style={[
         {
           backgroundColor: theme.color.secondary[colorTheme],
+          justifyContent: "center",
+          borderRadius: 10,
+          shadowOffset: {
+            width: 1,
+            height: 1
+          },
+          shadowOpacity: 0.4,
         },
+        ButtonStyle.base,
         props.style,
       ]}
     >
@@ -33,3 +42,10 @@ export function Button(props: ButtonProps) {
     </TouchableOpacity>
   );
 }
+
+const ButtonStyle = StyleSheet.create({
+  base: {
+    justifyContent: "center",
+    borderRadius: 10
+  }
+})

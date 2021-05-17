@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { DrawerLayout } from '../Groups/DrawerLayout';
 import { DrawerView } from '../Groups/DrawerView';
 import { useColorAppearance, useMyTheme } from '../../providers/MyThemeProviders';
@@ -16,16 +16,10 @@ export default function Main(props: MainProps) {
   const theme = useMyTheme();
   const colorTheme = useColorAppearance();
   return (
-    <SafeAreaView
-      style={{ flex: 1, backgroundColor: theme.color.background[colorTheme] }}
-    >
-      <DrawerLayout drawerView={props.drawerView || DrawerView}>
-        {props.navBar}
-        <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flex: 1 }}>
-          {props.children}
-        </ScrollView>
-        {props.footer}
-      </DrawerLayout>
-    </SafeAreaView>
+    <DrawerLayout drawerView={props.drawerView || DrawerView}>
+      {props.navBar}
+      {props.children}
+      {props.footer}
+    </DrawerLayout>
   );
 }

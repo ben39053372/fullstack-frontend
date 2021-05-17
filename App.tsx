@@ -8,20 +8,22 @@ import index from './src/pages/index';
 import About from './src/pages/about';
 import Providers from './src/providers/index';
 import Main from './src/components/Layouts/Main';
+import { NavBar } from './src/components/Groups/NavBar'
+import { constant } from './src/const';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <Providers>
-      <Main>
-        <NavigationContainer>
-          <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Home" component={index} />
-            <Stack.Screen name="About" component={About} />
+      <NavigationContainer>
+        <Main>
+          <Stack.Navigator screenOptions={{ header: (props) => <NavBar title={constant.appTitle} {...props} /> }} >
+            <Stack.Screen name="home" component={index} />
+            <Stack.Screen name="about" component={About} />
           </Stack.Navigator>
-        </NavigationContainer>
-      </Main>
+        </Main>
+      </NavigationContainer>
     </Providers>
   );
 }

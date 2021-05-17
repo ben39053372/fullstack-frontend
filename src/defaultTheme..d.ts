@@ -18,6 +18,7 @@ interface ColorVariant {
   info: Color;
   success: Color;
   text: Color;
+  textInputBackground: Color;
   background: Color;
 }
 
