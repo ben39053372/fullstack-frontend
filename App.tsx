@@ -11,7 +11,6 @@ import Profile from './src/pages/profile';
 
 import Providers from './src/providers/index';
 import Main from './src/components/Layouts/Main';
-import { AuthContext, AuthProvider } from './src/utils/Auth/AuthGuard';
 
 const Stack = createStackNavigator();
 
@@ -20,16 +19,15 @@ export default function App() {
     <Providers>
       <NavigationContainer>
         <Main>
-          <AuthContext.Consumer>
-            {({ state }) => (
-              <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="about" component={About} />
-                <Stack.Screen name="profile" component={Profile} />
-                <Stack.Screen name="home" component={index} />
-                <Stack.Screen name="login" component={Login} />
-              </Stack.Navigator>
-            )}
-          </AuthContext.Consumer>
+          <Stack.Navigator
+            screenOptions={{ headerShown: false }}
+            initialRouteName="home"
+          >
+            <Stack.Screen name="home" component={index} />
+            <Stack.Screen name="about" component={About} />
+            <Stack.Screen name="profile" component={Profile} />
+            <Stack.Screen name="login" component={Login} />
+          </Stack.Navigator>
         </Main>
       </NavigationContainer>
     </Providers>

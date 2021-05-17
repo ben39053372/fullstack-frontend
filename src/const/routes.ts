@@ -37,6 +37,9 @@ export const toLogin: RouteTo = {
   web: {
     path: '/login',
   },
+  native: {
+    screen: "login"
+  }
 };
 
 export const toAbout: RouteTo = {
