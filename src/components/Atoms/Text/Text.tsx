@@ -16,7 +16,7 @@ export function Text(props: TypographyProps) {
       style={[
         {
           fontSize: theme.typography[props.textVariant || 'h6'].fontSize * 8,
-          margin: theme.spacing.xl,
+          margin: theme.spacing.lg,
           color: theme.color.text[colorTheme],
         },
         props.style,

@@ -36,7 +36,12 @@ export const theme: DefaultTheme = {
     text: {
       light: '#303030',
       main: '#505050',
-      dark: '#fff',
+      dark: '#e0e0e0',
+    },
+    textInputBackground: {
+      light: '#404040',
+      main: '#404040',
+      dark: '#c0c0c0',
     },
     background: {
       light: '#f0f0f0',

@@ -13612,6 +13612,7 @@ react-native-web@~0.13.12:
     prop-types "^15.6.0"
     react-timer-mixin "^0.13.4"
 
+<<<<<<< HEAD
 "react-native@https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz":
   version "0.63.2"
   resolved "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz#a3d42e4135c891cf15a335cf69922e96507d6b8d"
@@ -13620,6 +13621,20 @@ react-native-web@~0.13.12:
     "@react-native-community/cli" "^4.14.0"
     "@react-native-community/cli-platform-android" "^4.13.0"
     "@react-native-community/cli-platform-ios" "^4.13.0"
+=======
+react-native@20:
+  version "0.64.0"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.64.0.tgz#c3bde5b638bf8bcf12bae6e094930d39cb942ab7"
+  integrity sha512-8dhSHBthgGwAjU+OjqUEA49229ThPMQH7URH0u8L0xoQFCnZO2sZ9Wc6KcbxI0x9KSmjCMFFZqRe3w3QsRv64g==
+  dependencies:
+    "@jest/create-cache-key-function" "^26.5.0"
+    "@react-native-community/cli" "^5.0.1-alpha.0"
+    "@react-native-community/cli-platform-android" "^5.0.1-alpha.0"
+    "@react-native-community/cli-platform-ios" "^5.0.1-alpha.0"
+    "@react-native/assets" "1.0.0"
+    "@react-native/normalize-color" "1.0.0"
+    "@react-native/polyfills" "1.0.0"
+>>>>>>> 829f9c27c81fdab5072a414a4b60ffab5412e8ec
     abort-controller "^3.0.0"
     anser "^1.4.9"
     base64-js "^1.1.2"
